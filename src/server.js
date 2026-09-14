@@ -1,6 +1,7 @@
 'use strict';
 const http = require('http');
 const { URL } = require('url');
+const { version } = require('./version');
 
 function greet(name) {
   return `Hello, ${name || 'world'}! This is the AI Software House pilot API.`;
@@ -17,6 +18,11 @@ function createServer() {
     if (pathname === '/api/greet') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ message: greet(searchParams.get('name')) }));
+      return;
+    }
+    if (pathname === '/api/version') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ version }));
       return;
     }
     res.writeHead(404, { 'Content-Type': 'application/json' });

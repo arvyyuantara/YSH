@@ -5,7 +5,7 @@
   "description": "Minimal pilot application for AI Software House M4 (GitHub/PR/CI/staging integration demo).",
   "scripts": {
     "start": "node src/server.js",
-    "lint": "node --check src/server.js && node --check test/unit.test.js && node --check test/api.test.js",
+    "lint": "node --check src/server.js && node --check src/version.js && node --check test/unit.test.js && node --check test/api.test.js",
     "build": "echo 'no build step needed (plain JS, no bundler)'",
     "test:unit": "node --test test/unit.test.js",
     "test:api": "node --test test/api.test.js",
